@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/zhaw-light.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -371,14 +371,11 @@ Reveal.addEventListener( 'customevent', function() {
 						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
 					</p>
 				</section>
-
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-
 		<script>
 
 			// Full list of configuration options available at:
@@ -387,7 +384,9 @@ Reveal.addEventListener( 'customevent', function() {
 				controls: true,
 				progress: true,
 				history: true,
-				center: true,
+				center: false,
+				margin: 0,
+				slideNumber: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
@@ -403,6 +402,33 @@ Reveal.addEventListener( 'customevent', function() {
 			});
 
 		</script>
-
+		<script>
+			// Add slide number if enabled
+			//$(document).ready(function () {
+				var config = Reveal.getConfig();
+				console.log("config: " + config);
+				//if (config.slideNumber) {
+					toArray( $(document).querySelectorAll( ".reveal .slides section" )).forEach (
+							function (slide) {
+								if( !slide.classList.contains( 'stack' ) ) {
+									// Display the number of the page using 'indexh - indexv' format
+									var indices = Reveal.getIndices( slide );
+									var indexString = indices.h;
+									if( indices.v > 0 ) {
+										indexString += ' - ' + indices.v;
+									}
+									var node = document.createElement( 'div' );
+									node.classList.add( "print-slide-number" );
+									if( typeof node.innerHTML === 'string' ) {
+										node.innerHTML = indexString;
+									}
+									slide.appendChild( node );
+								}
+							}
+						);
+					
+				//}
+			//}
+		</script>
 	</body>
 </html>

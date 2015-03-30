@@ -1,0 +1,172 @@
+/**
+ * ZHAW theme for reveal.js. Based on the original 'white' theme from Hakim El Hattab. 
+ *
+ * Copyright (C) 2015 Christof Marti 
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #222;
+$headingColor: #0164A7;
+
+$blockMargin: 20px;
+$slideMargin: 20px;
+$logoWidth:  0.7*283px;
+$logoHeight: 0.7*142px;
+
+$mainFontSize: 37px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: #0164A7;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.2em;
+$heading2Size: 1.4em;
+$heading3Size: 1.1em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fefefe;
+	}
+}
+
+.reveal .slides,
+.print-pdf .reveal .slides {
+	box-sizing: border-box;
+	text-align: left;
+	> section.stack,
+	> section.fragment {
+		padding-left: 0 !important;
+		padding-right: 0 !important;		
+	}
+	
+	> section,
+	> section > section {
+		box-sizing: border-box;
+		padding-left: $slideMargin !important; 
+		padding-right: $slideMargin !important;		
+		padding-top: 0;
+		padding-bottom: 0;
+		> h1:first-child {
+			padding-top: 250px;
+			background-image: url("../../images/de-zhaw-init-cmyk.svg");
+			background-size: 1.5*$logoWidth 1.5*$logoHeight;
+			background-position: right 10px top 10px;
+			background-repeat: no-repeat;
+
+		}
+		&.has-dark-background > h1:first-child {
+			background-image: url("../../images/de-zhaw-init-negativ.svg");
+		}
+		> h2:first-child {
+			box-sizing: border-box;
+			background-image: url("../../images/de-zhaw-init-cmyk.svg");
+			background-size: $logoWidth $logoHeight;
+			background-position: right 10px top 5px;
+			background-repeat: no-repeat;
+			background-color: transparent;
+			border-bottom: 2px solid $headingColor;
+			padding-left: $slideMargin;
+			margin-left: -$slideMargin;
+			padding-right: $logoWidth;
+			margin-right: -$slideMargin;
+			padding-top: $slideMargin+5px;
+			padding-bottom: $slideMargin+5px;
+			overflow: auto;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			color: $headingColor;
+			+ * {
+				margin-top: 1.5*$blockMargin;
+			}
+		}
+		&.has-dark-background > h2:first-child {
+			background-image: url("../../images/de-zhaw-init-negativ.svg");
+			border-bottom: 2px solid $backgroundColor;
+			color: $backgroundColor;
+		}
+	}
+}
+
+
+
+.reveal pre {
+	margin-left: 0 !important;
+	width: 100% !important;
+}
+
+.reveal blockquote {
+	width: 85% !important;
+	padding: 5px 10px !important;
+	background: lighten($linkColor, 60%) !important;
+	box-shadow: 0px 0px 5px $linkColor !important;
+}
+
+.reveal ol
+{
+	margin-left: 1.2em !important;
+}
+/*
+.reveal ul {
+	list-style: none !important;
+    li:before {
+		content: '\25CF';
+		margin-left: -1em;
+		padding-left: 1em;
+	}
+}
+*/
+
+.reveal table {
+	margin-left: 0 !important;
+	th {
+		border-bottom-width: 2px !important;
+	}
+	th, td {
+		border-bottom-color: $headingColor !important;
+	}
+	&.centered {
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+}
+
+.reveal .centered {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.print-pdf .reveal .slides {
+	.print-slide-number {
+		position: absolute;
+		display: block;
+		right: 15px;
+		top: 15px;
+		opacity: 0.8;
+		z-index: 31;
+		font-size: 18px;
+	}
+	&.has-dark-background .print-slide-number {
+		color: $backgroundColor;
+	}
+}
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
