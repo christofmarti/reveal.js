@@ -4,6 +4,7 @@ A framework for easily creating beautiful presentations using HTML. [Check out t
 
 reveal.js comes with a broad range of features including [nested slides](https://github.com/hakimel/reveal.js#markup), [Markdown contents](https://github.com/hakimel/reveal.js#markdown), [PDF export](https://github.com/hakimel/reveal.js#pdf-export), [speaker notes](https://github.com/hakimel/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/hakimel/reveal.js#api). It's best viewed in a modern browser but [fallbacks](https://github.com/hakimel/reveal.js/wiki/Browser-Support) are available to make sure your presentation can still be viewed elsewhere.
 
+In this fork only the themes "zhaw" and "zhaw-light" have been added and set as default for the demo "index.html" page.
 
 #### More reading:
 - [Installation](#installation): Step-by-step instructions for getting reveal.js running on your computer.
