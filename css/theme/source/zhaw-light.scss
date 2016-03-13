@@ -67,18 +67,18 @@ section.has-dark-background {
 		padding-bottom: 0;
 		> h1:first-child {
 			padding-top: 250px;
-			background-image: url("../../images/de-zhaw-init-cmyk.svg");
+			background-image: url("images/de-zhaw-init-cmyk.svg");
 			background-size: 1.5*$logoWidth 1.5*$logoHeight;
 			background-position: right 10px top 10px;
 			background-repeat: no-repeat;
 
 		}
 		&.has-dark-background > h1:first-child {
-			background-image: url("../../images/de-zhaw-init-negativ.svg");
+			background-image: url("images/de-zhaw-init-negativ.svg");
 		}
 		> h2:first-child {
 			box-sizing: border-box;
-			background-image: url("../../images/de-zhaw-init-cmyk.svg");
+			background-image: url("images/de-zhaw-init-cmyk.svg");
 			background-size: $logoWidth $logoHeight;
 			background-position: right 10px top 5px;
 			background-repeat: no-repeat;
@@ -99,7 +99,7 @@ section.has-dark-background {
 			}
 		}
 		&.has-dark-background > h2:first-child {
-			background-image: url("../../images/de-zhaw-init-negativ.svg");
+			background-image: url("images/de-zhaw-init-negativ.svg");
 			border-bottom: 2px solid $backgroundColor;
 			color: $backgroundColor;
 		}
