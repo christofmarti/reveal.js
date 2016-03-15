@@ -111,18 +111,6 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   margin-left: auto !important;
   margin-right: auto !important; }
 
-.print-pdf .reveal .slides .print-slide-number {
-  position: absolute;
-  display: block;
-  right: 15px;
-  top: 15px;
-  opacity: 0.8;
-  z-index: 31;
-  font-size: 18px; }
-
-.print-pdf .reveal .slides.has-dark-background .print-slide-number {
-  color: #fff; }
-
 /*********************************************
  * GLOBAL STYLES
  *********************************************/

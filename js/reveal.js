@@ -624,26 +624,6 @@
 			fragment.classList.add( 'visible' );
 		} );
 
-		// Add slide number if enabled
-		toArray( dom.wrapper.querySelectorAll( SLIDES_SELECTOR )).forEach ( 
-			function (slide) {
-				if( !slide.classList.contains( 'stack' ) ) {
-					// Display the number of the page using 'indexh - indexv' format
-					var indices = getIndices( slide );
-					var indexString = indices.h;
-					if( indices.v > 0 ) {
-						indexString += ' - ' + indices.v;
-					}
-					var node = document.createElement( 'div' );
-					node.classList.add( "print-slide-number" );
-					if( typeof node.innerHTML === 'string' ) {
-						node.innerHTML = indexString;
-					}
-					slide.appendChild( node );
-				}
-			}
-		);
-
 	}
 
 	/**

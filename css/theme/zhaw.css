@@ -89,6 +89,8 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 	list-style: none !important;
     li:before {
 		content: '\25CF';
+		margin-left: -1em;
+		padding-left: 1em;
 	}
 }
 */

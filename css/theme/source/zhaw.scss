@@ -127,6 +127,8 @@ section.has-dark-background {
 	list-style: none !important;
     li:before {
 		content: '\25CF';
+		margin-left: -1em;
+		padding-left: 1em;
 	}
 }
 */

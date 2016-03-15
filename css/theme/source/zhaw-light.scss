@@ -153,20 +153,7 @@ section.has-dark-background {
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
-.print-pdf .reveal .slides {
-	.print-slide-number {
-		position: absolute;
-		display: block;
-		right: 15px;
-		top: 15px;
-		opacity: 0.8;
-		z-index: 31;
-		font-size: 18px;
-	}
-	&.has-dark-background .print-slide-number {
-		color: $backgroundColor;
-	}
-}
+
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
