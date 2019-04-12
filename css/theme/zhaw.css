@@ -8,19 +8,19 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   color: #fefefe; }
 
 .reveal .slides,
-.print-pdf .reveal .slides {
+.print-pdf .reveal .slides .pdf-page {
   box-sizing: border-box;
   text-align: left; }
   .reveal .slides > section.stack,
   .reveal .slides > section.fragment,
-  .print-pdf .reveal .slides > section.stack,
-  .print-pdf .reveal .slides > section.fragment {
+  .print-pdf .reveal .slides .pdf-page > section.stack,
+  .print-pdf .reveal .slides .pdf-page > section.fragment {
     padding-left: 0 !important;
     padding-right: 0 !important; }
   .reveal .slides > section,
   .reveal .slides > section > section,
-  .print-pdf .reveal .slides > section,
-  .print-pdf .reveal .slides > section > section {
+  .print-pdf .reveal .slides .pdf-page > section,
+  .print-pdf .reveal .slides .pdf-page > section > section {
     box-sizing: border-box;
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -28,8 +28,8 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
     padding-bottom: 0; }
     .reveal .slides > section > h1:first-child,
     .reveal .slides > section > section > h1:first-child,
-    .print-pdf .reveal .slides > section > h1:first-child,
-    .print-pdf .reveal .slides > section > section > h1:first-child {
+    .print-pdf .reveal .slides .pdf-page > section > h1:first-child,
+    .print-pdf .reveal .slides .pdf-page > section > section > h1:first-child {
       padding-top: 250px;
       background-image: url("images/de-zhaw-init-cmyk.svg");
       background-size: 297.15px 149.1px;
@@ -37,13 +37,13 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
       background-repeat: no-repeat; }
     .reveal .slides > section.has-dark-background > h1:first-child,
     .reveal .slides > section > section.has-dark-background > h1:first-child,
-    .print-pdf .reveal .slides > section.has-dark-background > h1:first-child,
-    .print-pdf .reveal .slides > section > section.has-dark-background > h1:first-child {
+    .print-pdf .reveal .slides .pdf-page > section.has-dark-background > h1:first-child,
+    .print-pdf .reveal .slides .pdf-page > section > section.has-dark-background > h1:first-child {
       background-image: url("images/de-zhaw-init-negativ.svg"); }
     .reveal .slides > section > h2:first-child,
     .reveal .slides > section > section > h2:first-child,
-    .print-pdf .reveal .slides > section > h2:first-child,
-    .print-pdf .reveal .slides > section > section > h2:first-child {
+    .print-pdf .reveal .slides .pdf-page > section > h2:first-child,
+    .print-pdf .reveal .slides .pdf-page > section > section > h2:first-child {
       box-sizing: border-box;
       background-image: url("images/de-zhaw-init-negativ.svg");
       background-size: 198.1px 99.4px;
@@ -62,13 +62,13 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
       color: #fff; }
       .reveal .slides > section > h2:first-child + *,
       .reveal .slides > section > section > h2:first-child + *,
-      .print-pdf .reveal .slides > section > h2:first-child + *,
-      .print-pdf .reveal .slides > section > section > h2:first-child + * {
+      .print-pdf .reveal .slides .pdf-page > section > h2:first-child + *,
+      .print-pdf .reveal .slides .pdf-page > section > section > h2:first-child + * {
         margin-top: 30px; }
     .reveal .slides > section.has-dark-background > h2:first-child,
     .reveal .slides > section > section.has-dark-background > h2:first-child,
-    .print-pdf .reveal .slides > section.has-dark-background > h2:first-child,
-    .print-pdf .reveal .slides > section > section.has-dark-background > h2:first-child {
+    .print-pdf .reveal .slides .pdf-page > section.has-dark-background > h2:first-child,
+    .print-pdf .reveal .slides .pdf-page > section > section.has-dark-background > h2:first-child {
       background-color: transparent; }
 
 .reveal pre {
@@ -126,8 +126,13 @@ body {
   background: #2aa8fe;
   text-shadow: none; }
 
-.reveal .slides > section,
-.reveal .slides > section > section {
+::-moz-selection {
+  color: #fff;
+  background: #2aa8fe;
+  text-shadow: none; }
+
+.reveal .slides section,
+.reveal .slides section > section {
   line-height: 1.3;
   font-weight: inherit; }
 
@@ -218,10 +223,6 @@ body {
 .reveal dd {
   margin-left: 40px; }
 
-.reveal q,
-.reveal blockquote {
-  quotes: none; }
-
 .reveal blockquote {
   display: block;
   position: relative;
@@ -249,10 +250,11 @@ body {
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
 
 .reveal code {
-  font-family: monospace; }
+  font-family: monospace;
+  text-transform: none; }
 
 .reveal pre code {
   display: block;
@@ -288,10 +290,12 @@ body {
   border-bottom: none; }
 
 .reveal sup {
-  vertical-align: super; }
+  vertical-align: super;
+  font-size: smaller; }
 
 .reveal sub {
-  vertical-align: sub; }
+  vertical-align: sub;
+  font-size: smaller; }
 
 .reveal small {
   display: inline-block;
@@ -347,42 +351,24 @@ body {
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-left.enabled {
-  border-right-color: #0164A7; }
-
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-right.enabled {
-  border-left-color: #0164A7; }
-
-.reveal .controls .navigate-up,
-.reveal .controls .navigate-up.enabled {
-  border-bottom-color: #0164A7; }
-
-.reveal .controls .navigate-down,
-.reveal .controls .navigate-down.enabled {
-  border-top-color: #0164A7; }
-
-.reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #0192f3; }
-
-.reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #0192f3; }
-
-.reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #0192f3; }
-
-.reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #0192f3; }
+.reveal .controls {
+  color: #0164A7; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
-  background: rgba(0, 0, 0, 0.2); }
+  background: rgba(0, 0, 0, 0.2);
+  color: #0164A7; }
 
 .reveal .progress span {
-  background: #0164A7;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: #fff; } }

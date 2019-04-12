@@ -49,7 +49,7 @@ section.has-dark-background {
 }
 
 .reveal .slides,
-.print-pdf .reveal .slides {
+.print-pdf .reveal .slides .pdf-page {
 	box-sizing: border-box;
 	text-align: left;
 	> section.stack,
