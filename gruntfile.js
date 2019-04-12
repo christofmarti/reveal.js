@@ -4,9 +4,11 @@ const sass = require('node-sass');
 module.exports = grunt => {
 
 	require('load-grunt-tasks')(grunt);
-	let hostname = grunt.option('hostname') || '0.0.0.0';
+	let hostname = grunt.option('hostname') || process.env.GRUNT_HOST || '0.0.0.0';
 	let port = grunt.option('port') || process.env.GRUNT_PORT || 8000;
-	let root = grunt.option('root') || '.';
+	let browser = grunt.option('browser') || process.env.GRUNT_BROWSER || 'true';
+	let open = (browser == 'true')
+	let root = grunt.option('root') || process.env.GRUNT_ROOT || '.';
 
 	if (!Array.isArray(root)) root = [root];
 
@@ -109,7 +111,7 @@ module.exports = grunt => {
 					port: port,
 					base: root,
 					livereload: true,
-					open: true,
+					open: open,
 					useAvailablePort: true
 				}
 			}
