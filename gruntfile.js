@@ -4,8 +4,8 @@ const sass = require('node-sass');
 module.exports = grunt => {
 
 	require('load-grunt-tasks')(grunt);
-	let hostname = grunt.option('hostname') || 'localhost';
-	let port = grunt.option('port') || 8000;
+	let hostname = grunt.option('hostname') || '0.0.0.0';
+	let port = grunt.option('port') || process.env.GRUNT_PORT || 8000;
 	let root = grunt.option('root') || '.';
 
 	if (!Array.isArray(root)) root = [root];
@@ -95,7 +95,8 @@ module.exports = grunt => {
 					unescape: false,
 					define: false,
 					exports: false,
-					require: false
+					require: false,
+					process: false
 				}
 			},
 			files: [ 'gruntfile.js', 'js/reveal.js' ]
